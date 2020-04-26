@@ -1,1 +1,21 @@
-<paste log output from Kubernetes-mediated prediction, here>
+$ kubectl port-forward microservice-687cb869bd-cnv68  8080:80
+Forwarding from 127.0.0.1:8080 -> 80
+Forwarding from [::1]:8080 -> 80
+
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+Handling connection for 8080
+
+
+
+$ ./make_prediction.sh
+Port: 8080
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100   260  100    48  100   212   1021   4510 --:--:-- --:--:-- --:--:--  6625{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+

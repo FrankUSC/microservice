@@ -4,15 +4,21 @@
 
 # Step 1:
 # This is your Docker ID/path
-# dockerpath=<>
+dockerpath=raosuper/microservice:latest
 
 # Step 2
 # Run the Docker Hub container with kubernetes
+#docker stack deploy --compose-file docker-compose.yml mystack
+#kubectl create deployment microservice-pod --image=$dockerpath
+#kubectl run microservice-pod --image=$dockerpath --port=80 --generator=run-pod/v1
+kubectl run microservice  --image=$dockerpath   --port=80
 
 
 # Step 3:
 # List kubernetes pods
+kubectl get pods
 
 # Step 4:
 # Forward the container port to a host
+kubectl port-forward microservice-687cb869bd-cnv68  8080:80
 
